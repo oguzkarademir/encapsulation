@@ -8,6 +8,7 @@ const obj = {
   array: [3],
   mergeArrays: function (arrToMerge) {
     // merge the argument into the saved array
+    this.array = [...this.array, ...arrToMerge];
   }
 }
 

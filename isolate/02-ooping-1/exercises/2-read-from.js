@@ -2,8 +2,12 @@
 
 const obj = {
   word: '',
-  getWord: function () { },
-  concat: function (secondHalf) { },
+  getWord: function () { 
+    return 'the word is ' + `${this.word}`; 
+  },
+  concat: function (secondHalf) {
+    return `${this.word}` + `${secondHalf}`;
+   },
 };
 
 const test1 = obj.getWord() === 'the word is ';

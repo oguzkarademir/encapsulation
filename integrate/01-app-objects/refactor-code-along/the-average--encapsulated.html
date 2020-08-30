@@ -53,6 +53,13 @@
 
   <script id='handlers'>
     'use strict';
+    const addNumberHandler = () => {
+
+    }
+
+    const resetHandler = () => {
+      
+    }
 
   </script>
 
@@ -63,6 +70,11 @@
 
   <script id='listeners'>
     'use strict';
+    // the listeners are all correct
+    document.getElementById('add-number-form')
+      .addEventListener('submit', addNumberHandler);
+    document.getElementById('reset-button')
+      .addEventListener('click', resetHandler);
 
   </script>
 </body>

@@ -16,7 +16,7 @@ const obj1Greeting1 = obj1.getGreeting();
 const test1 = obj1Greeting1 === `hi, I'm obj1`;
 console.assert(test1, 'Test 1');
 
-const obj2Greeting1 = _;
+const obj2Greeting1 = obj2.greeting;
 const test2 = obj2Greeting1 === `hi, I'm obj2`;
 console.assert(test2, 'Test 2');
 
@@ -27,6 +27,6 @@ const obj1Greeting2 = obj1.getGreeting();
 const test3 = obj1Greeting2 === `hi, I'm first`;
 console.assert(test3, 'Test 3');
 
-const obj2Greeting2 = _;
+const obj2Greeting2 = obj2.greeting;
 const test4 = obj2Greeting2 === `hi, I'm second`;
 console.assert(test4, 'Test 4');
