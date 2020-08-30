@@ -8,7 +8,7 @@ const obj1 = {
 const obj2 = {
   name: 'obj2',
   get greeting() {
-
+    return `hi, I'm ${this.name}`;
   }
 }
 
