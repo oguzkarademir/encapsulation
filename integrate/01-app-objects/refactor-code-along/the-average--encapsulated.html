@@ -43,29 +43,148 @@
 
   <script id='app-object'>
     'use strict';
+    const app = {
+      state: {
+        numbers:[],
+      },
+
+      get numbers() {
+        return this.state.numbers;
+      },
+
+      get average() {
+        const arrOfNumbers = this.state.numbers;
+        if (arrOfNumbers.length === 0) {
+          return 0;
+        }
+        const numberOfNumbers = arrOfNumbers.length;
+        const sum = arrOfNumbers.reduce((sum, next) => sum + next);
+        const average = sum / numberOfNumbers;
+        return average;
+      },
+
+      addNumber(newInput) {
+        this.state.numbers.push(newInput);
+      },
+
+      resetNumbers() {
+        this.state.numbers = [];
+      },
+
+      renderNumberList() {
+        const ulEl = document.createElement('ul');
+        ulEl.className = 'numbers-list';
+        for (let i = 0; i < this.numbers.length; i++) {
+          const liEl = document.createElement('li');
+          liEl.className = 'digital';
+          liEl.innerHTML = this.numbers[i];
+          ulEl.appendChild(liEl);
+        }
+        return ulEl;
+      },
+
+      renderAverage() {
+        const pEl = document.createElement('p');
+        pEl.innerHTML = 'average: ' + this.average;
+        pEl.className = 'discreet';
+        return pEl;
+      }
+    }
 
   </script>
 
   <script id='views'>
     'use strict';
-
+    const renderNumberList = (arrOfNumbers) => {
+      const ulEl = document.createElement('ul');
+      ulEl.className = 'numbers-list';
+      for (let i = 0; i < arrOfNumbers.length; i++) {
+        const liEl = document.createElement('li');
+        liEl.className = 'digital';
+        liEl.innerHTML = arrOfNumbers[i];
+        ulEl.appendChild(liEl);
+      }
+      return ulEl;
+    };
   </script>
 
   <script id='handlers'>
     'use strict';
     const addNumberHandler = () => {
+      const logEntry = {
+        action: 'add number'
+      };
+      log.push(logEntry);
+      const inputEl = document.getElementById('number-input');
+      const userInput = Number(inputEl.value);
+
+      //update state
+      app.addNumber(userInput);
+
+      //log new state
+      logEntry.state = deepClone(app.state);
+
+      const averageDisplay = document.getElementById('average');
+      averageDisplay.innerHTML = '';
+      const getAverage = app.renderAverage();
+      averageDisplay.appendChild(getAverage);
+
+      // log new view rendered from state
+      logEntry.viewAverage = getAverage;
+
+    
+      const numbersContainer = document.getElementById('numbers-list');
+      numbersContainer.innerHTML = '';
+      const renderedList = app.renderNumberList();
+      numbersContainer.appendChild(renderedList);
+      // log new view rendered from state
+      logEntry.viewNumbers = renderedList;
 
     }
 
     const resetHandler = () => {
-      
+      const logEntry = {
+        action: 'reset'
+      };
+      log.push(logEntry);
+
+      // reset state to it's initial values
+      app.resetNumbers();
+
+      // re-render the average
+
+      const averageContainer = document.getElementById('average');
+      averageContainer.innerHTML = '';
+      const getAverage = app.renderAverage();
+      averageContainer.appendChild(getAverage);
+
+      // log new view rendered from state
+      logEntry.viewAverage = getAverage;
+
+      // log new view rendered from state
+      logEntry.viewAverage = getAverage;
+
+      // clear the numbers container
+      const numbersContainer = document.getElementById('numbers-list');
+      numbersContainer.innerHTML = '';
     }
 
   </script>
 
   <script id='init'>
     'use strict';
-
+    const log = [];
+    window.onload = () => {
+      const initLog = {
+        state: deepClone(app.state)
+      };
+      log.push(initLog);
+      const averageDisplay = document.getElementById('average');
+      const getAverage = app.renderAverage();
+      averageDisplay.appendChild(getAverage);
+      // log new view rendered from state
+      initLog.viewAverage = getAverage;
+        };
   </script>
 
   <script id='listeners'>
