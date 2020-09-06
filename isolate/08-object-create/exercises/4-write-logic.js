@@ -4,15 +4,27 @@
 const userPrototype = {
   get status() {
     // render userName and loggedIn status into a string
+    if (this.state.loggedIn) {
+      return this.state.userName + ' is logged in' 
+    } else {
+      return this.state.userName + ' is logged out'
+    }
   },
   logIn: function (passWord) {
     // log the user in if they pass the correct password
+    if (passWord === this.state.password) {
+      this.state.loggedIn = true;
+    }
   },
   logOut: function () {
     // log the user out no matter what
+    this.state.loggedIn = false;
   },
   changePassword: function (oldPassword, newPassword) {
-    // if the user is logged in, and the oldPassword is correct, reset their password
+    //if the user is logged in, and the oldPassword is correct, reset their password
+    if (oldPassword === this.state.password) {
+      this.state.password = newPassword;
+    }
   }
 };
 console.log('userPrototype:', userPrototype);
@@ -44,7 +56,7 @@ console.assert(testRory0, 'Rory 0: Rory is logged in');
 // users do things
 userRory.logOut();
 userAverie.changePassword('bruxelles1000', 'copenhagen2000');
-userAverie.logIn('bruxelles1000');
+userAverie.logIn('copenhagen2000');
 userRory.logIn('HYF-BE');
 
 
@@ -57,7 +69,7 @@ console.assert(testRory1, 'Rory 1: Rory is logged in');
 
 
 // users do things
-userAverie.changePassword('brussels1000', 'copenhagen2000');
+userAverie.changePassword('copenhagen2000', 'bruxelles1000');
 userAverie.logOut();
 userRory.changePassword('HYF-BE', 'HYF-CPH');
 userRory.logOut();

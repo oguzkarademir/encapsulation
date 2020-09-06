@@ -2,13 +2,21 @@
 
 const calculatorPrototype = {
   get value() {
-
+    return this.state.value;
   },
   add: function (x, y = undefined) {
-
+    if (y !== undefined) {
+      this.state.value = x + y;
+    } else {
+      this.state.value += x;
+    }
   },
-  subtract: function (x, y = undefined) {
-
+  subtract: function (x, y = undefined) {  
+    if (y !== undefined) {
+      this.state.value = x - y;
+    } else {
+      this.state.value -= x;
+    }
   }
 };
 console.log('calculatorPrototype:', calculatorPrototype);

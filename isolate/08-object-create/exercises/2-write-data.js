@@ -25,7 +25,7 @@ console.log('--- fake set A ---');
 
 const fakeSetA = Object.create(fakeSetPrototype);
 fakeSetA.id = 'A';
-fakeSetA._ = _;
+fakeSetA.values = [];
 
 const testA1 = fakeSetA.size === 0;
 
@@ -52,7 +52,7 @@ console.log('--- fake set B ---');
 
 const fakeSetB = Object.create(fakeSetPrototype);
 fakeSetB.id = 'B';
-fakeSetB._ = _;
+fakeSetB.values = [];
 
 
 const testB1 = fakeSetB.size === 0;
