@@ -17,6 +17,8 @@ Along the way you will get your first introduction to one of the main programmin
   - [Hard Skills](#hard-skills)
 - [About the Projects](#about-the-projects)
 - [Suggested Study](#suggested-study)
+  - [Isolate](./isolate/index.html)
+  - [Integrate](./integrate/index.html)
 - Sundays & Projects
   - [Week 1](#week-1)
   - [Week 2](#week-2)
@@ -36,7 +38,8 @@ Along the way you will get your first introduction to one of the main programmin
 - **Inheritance**
 - **Code Reuse (DRY)**
 
-### Soft Skills
+<details>
+<summary>Soft Skills</summary>
 
 - Data-first development
   - Understanding applications as Data + User Interactions
@@ -45,7 +48,10 @@ Along the way you will get your first introduction to one of the main programmin
 - Object Oriented TDD
   - Using tests to define and verify OOP programs
 
-### Hard Skills
+</details>
+
+<details>
+<summary>Hard Skills</summary>
 
 - Use the keyword `this`
   - Be able to refactor functions into methods
@@ -63,6 +69,8 @@ Along the way you will get your first introduction to one of the main programmin
   - How does each one treat `this` differently?
 - Closure 101:
   - Using `() => {}` handlers to avoid binding
+</details>
+
 
 [TOP](#encapsulation)
 
@@ -89,10 +97,22 @@ In this module you'll learn how to:
 - [Practical JavaScript Tutorial](https://watchandcode.com/p/practical-javascript) (best tutorial ever)
 - [study.hyf.be/js/oop](https://study.hackyourfuture.be/javascript/oop) (more links)
 
-### Code to Study
+### Binding
+
+- [Examples of `this` and bind](https://www.youtube.com/watch?v=PIkA60I0dKU)
+- FunFunFunction
+  - [this & bind pt. 1](https://www.youtube.com/watch?v=GhbhD1HR5vk&list=PL0zVEGEvSaeHBZFy6Q8731rcwk0Gtuxub)
+  - [this & bind pt. 2](https://www.youtube.com/watch?v=PIkA60I0dKU&list=PL0zVEGEvSaeHBZFy6Q8731rcwk0Gtuxub&index=2)
+- Zach Gordon: [this](https://www.youtube.com/watch?v=2qMKjWf1KdE), [binding this](https://www.youtube.com/watch?v=73aAyap_88w), [example: event handlers](https://www.youtube.com/watch?v=sxRnmKldiBs)
+- [Binding example in JS Tutor](http://www.pythontutor.com/javascript.html#code=function%20returnThis%28%29%20%7B%0A%20%20return%20this%3B%0A%7D%0Aconst%20demo0%20%3D%20returnThis%28%29%3B%0A%0Aconst%20obj1%20%3D%20%7B%0A%20%20id%3A%201,%0A%20%20returnThis%0A%7D%3B%0Aconst%20demo1%20%3D%20obj1.returnThis%28%29%3B%0A%0Aconst%20obj2%20%3D%20%7B%20id%3A%202%20%7D%3B%0Aconst%20boundToObj2%20%3D%20returnThis.bind%28obj2%29%3B%0Aconst%20demo2%20%3D%20boundToObj2%28%29%3B%0A%0Aconst%20boundToLiteral%20%3D%20returnThis.bind%28%7B%20id%3A%203%20%7D%29%3B%0Aconst%20demo3%20%3D%20boundToLiteral%28%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D)
+
+### Exercises
 
 - [Isolate](./isolate/index.html)
 - [Integrate](./integrate/README.md)
+
+### Code to Study
+
 - [Example Projects](./example-projects/README.md)
 
 ### OOP TDD
@@ -168,15 +188,28 @@ You don't find a todo app so interesting?  not a problem!  Your group is free to
 
 ## Week 2
 
-Learn to _bind_ `this` to your app's event handlers
+Learn to:
+
+- inspect prototype chains in the debugger
+- tell the difference between _static_ and _instance_ methods
+- use `Object.create` for code reuse
 
 ### Prep Work
 
 > before class
 
-- [Examples of `this` and bind](https://www.youtube.com/watch?v=PIkA60I0dKU)
-- Zach Gordon: [this](https://www.youtube.com/watch?v=2qMKjWf1KdE), [binding this](https://www.youtube.com/watch?v=73aAyap_88w), [example: event handlers](https://www.youtube.com/watch?v=sxRnmKldiBs)
-- [Binding example in JS Tutor](http://www.pythontutor.com/javascript.html#code=function%20returnThis%28%29%20%7B%0A%20%20return%20this%3B%0A%7D%0Aconst%20demo0%20%3D%20returnThis%28%29%3B%0A%0Aconst%20obj1%20%3D%20%7B%0A%20%20id%3A%201,%0A%20%20returnThis%0A%7D%3B%0Aconst%20demo1%20%3D%20obj1.returnThis%28%29%3B%0A%0Aconst%20obj2%20%3D%20%7B%20id%3A%202%20%7D%3B%0Aconst%20boundToObj2%20%3D%20returnThis.bind%28obj2%29%3B%0Aconst%20demo2%20%3D%20boundToObj2%28%29%3B%0A%0Aconst%20boundToLiteral%20%3D%20returnThis.bind%28%7B%20id%3A%203%20%7D%29%3B%0Aconst%20demo3%20%3D%20boundToLiteral%28%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D)
+- Prototype Delegation
+  - [Just JavaScript](https://github.com/HackYourFutureBelgium/just-javascript/tree/master/09-prototypes)
+  - [prototype chain diagram](./diagrams/prototype-chain-1.jpeg)
+  - [more detailed diagram](./diagrams/prototype-chain-2.jpeg)
+  - [javascript.info](https://javascript.info/prototype-inheritance)
+- `Object.create()`
+  - FunFunFunction: [Prototypes in JavaScript](https://www.youtube.com/watch?v=riDVvXZ_Kb4), [Prototype Basics](https://www.youtube.com/watch?v=YkoelSTUy7A&list=PL0zVEGEvSaeHBZFy6Q8731rcwk0Gtuxub&index=3),[`Object.create()`](https://www.youtube.com/watch?v=CDFN1VatiJA)
+  - [Griffith](https://www.youtube.com/watch?v=qqyZn8X9M3I)
+  - [WebTunings](https://www.youtube.com/watch?v=4MUgn3XeOZM)
+  - [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
+- Code to Study:
+  - [Cycler Refactor](./example-projects/refactors/cycler) through `5-create-many.html`
 
 ### Lesson Plan
 
@@ -184,13 +217,18 @@ Learn to _bind_ `this` to your app's event handlers
 
 #### Isolate
 
+- 7. Prototype Delegation
+- 8. `Object.create`
 
 #### Integrate
 
+- 3. `Object.create`
 
 ### Project
 
 > after class
+
+_announced Monday_
 
 #### Checklist
 
@@ -258,7 +296,7 @@ Screen recordings of class.  Coaches, when sending your PR's with links please .
 
 ---
 
-## Class 7 & 8
+### Class 7 & 8
 
 > [Anthony](https://github.com/Toinne/), [Bram](https://github.com/bramdevries/)
 
@@ -269,3 +307,10 @@ Screen recordings of class.  Coaches, when sending your PR's with links please .
     - Part 1: [binding, and why it matters](https://vimeo.com/401830596)
     - Part 2: [binding handlers](https://vimeo.com/401853625)
 
+### Class 9 & 10
+
+> [Anthony](https://github.com/Toinne/), [Unmesh](https://github.com/unmeshvrije/), [Evan](https://github.com/colevandersWands)
+
+1. Week 1:
+    - Part 1: [`this`](https://vimeo.com/453294595)
+    - Part 2: [OOP Refactor](https://vimeo.com/453294872)
