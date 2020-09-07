@@ -13,7 +13,9 @@ function addThem(boundArg, freeArg) {
 
 // do write code here
 
-
+const bound1 = addThem.bind(obj1, '_');
+const bound2 = addThem.bind(obj2, 1);
+const bound3 = addThem.bind(obj3, '');
 
 // don't change this code
 

@@ -2,7 +2,13 @@
 
 // psst. use the debugger!
 
-const obj = {};
+const obj = {
+  current: 0,
+  method: function(boundArg, UnboundArg) {
+    this.current += (2 * (UnboundArg - boundArg)) ;
+    return this.current - (2 * boundArg * UnboundArg);
+  }
+};
 
 // don't change the code below this line
 const boundMethod = obj.method.bind(obj, 1);

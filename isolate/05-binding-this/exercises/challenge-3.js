@@ -5,23 +5,29 @@
 
 const obj1 = {
   id: 1,
-  x: true
+  x: false
 };
+
+const bound1 = returnThis.bind(obj1);
 
 const obj2 = {
   id: 2,
-  list: [1, 2, 3],
+  list: [3, 2, 1],
+  friend: bound1()
 };
+
+const bound2 = returnThis.bind(obj2);
 
 const obj3 = {
   id: 3,
+  foo: 'bar',
+  friend: bound2()
 };
 
 // don't change any code below this comment
-function returnThis() { return this; }
-
-const bound1 = returnThis.bind(obj1);
-const bound2 = returnThis.bind(obj2);
+function returnThis() { 
+  return this; 
+  }
 const bound3 = returnThis.bind(obj3);
 
 const this1 = bound1();

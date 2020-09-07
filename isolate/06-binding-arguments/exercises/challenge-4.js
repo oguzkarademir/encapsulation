@@ -2,7 +2,13 @@
 
 // this one is extra tricky
 
-const obj = {};
+const obj = {
+  current: 0,
+  method: function(arg1, UnboundArg){
+    this.current += arg1 + UnboundArg;
+    return this.current - (2 * (arg1 + UnboundArg));
+  }
+};
 
 // don't change the code below this line
 const boundMethod = obj.method.bind(obj, -1);
