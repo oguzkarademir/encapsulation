@@ -10,7 +10,7 @@ const userPrototype = {
       return this.state.userName + ' is logged out'
     }
   },
-  logIn: function (passWord) {
+  logIn: function (password) {
     // log the user in if they pass the correct password
     if (passWord === this.state.password) {
       this.state.loggedIn = true;
@@ -35,7 +35,7 @@ const userAverie = Object.create(userPrototype);
 userAverie.state = {
   loggedIn: false,
   userName: 'Averie',
-  password: 'bruxelles1000'
+  password: 'brussels1000'
 };
 
 const userRory = Object.create(userPrototype);
@@ -88,7 +88,8 @@ console.assert(testRory2, 'Rory 2: Rory is logged in');
 // users do things
 userRory.logOut();
 userAverie.logIn('bruxelles1000');
-userAverie.changePassword('bruxelles1000', 'copenhagen2000');
+userAverie.logIn('brussels1000');
+userAverie.changePassword('brussels1000', 'copenhagen2000');
 userAverie.logOut();
 userRory.logOut();
 userAverie.logIn('copenhagen2000');

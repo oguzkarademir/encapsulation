@@ -96,6 +96,9 @@ In this module you'll learn how to:
 
 - [Practical JavaScript Tutorial](https://watchandcode.com/p/practical-javascript) (best tutorial ever)
 - [study.hyf.be/js/oop](https://study.hackyourfuture.be/javascript/oop) (more links)
+- Getters & Setters
+  - [Mosh](https://programmingwithmosh.com/javascript/javascript-properties-getters-and-setters/)
+  - [Zell](https://dev.to/zellwk/why-use-getters-and-setters-functions-5a5f)
 
 ### Binding
 
@@ -215,20 +218,22 @@ Learn to:
 
 > during class
 
-#### Isolate
+#### Before Break
 
-- 7. Prototype Delegation
-- 8. `Object.create`
+- Isolate: 7. Prototype Delegation
 
-#### Integrate
+#### After Break
 
-- 3. `Object.create`
+- Isolate: 8. `Object.create`
+- Integrate: 3. `Object.create`
 
 ### Project
 
 > after class
 
-_announced Monday_
+List Manager!  Following up on the tutorial from last week, your group will be building a web page that allows users to create as many lists as they want.  You will need to refactor the todo list from WatchAndCode into a prototype object that can be used to create so list instances.  A suggestion:  users can input a title and create a new list with that title.
+
+Along with prototypes, your group will be exploring `import` and `export`.  This week's [starter repository](https://github.com/HackYourFutureBelgium/starter-encapsulation-list-prototype) has the basics already in place for you.  Enjoy!
 
 #### Checklist
 
@@ -242,8 +247,6 @@ _announced Monday_
   - [ ] [Project board](https://github.com/_/_/projects/_)
 - Implementation
   - [ ] ES Modules (`import`/`export`)
-  - [ ] Tests for logic & view methods
-  - [ ] Initial state in `src/data.js`
   - [ ] Logs of each user interaction
 ```
 
@@ -259,25 +262,46 @@ Learn to use `Class`es for a reusable code base.
 
 > before class
 
+- Classes
+  - [Traversy](https://www.youtube.com/watch?v=RBLIm5LMrmc)
+  - [javascript.info](https://javascript.info/class)
+  - [Beau](https://www.youtube.com/watch?v=bq_jZY6Skto)
+  - [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
+
 ### Lesson Plan
 
 > during class
 
-#### Isolate
+#### Before Break
 
+- [isolate](./isolate/index.html)
+  - 9. Classes
 
-#### Integrate
+#### After Break
 
+- [integrate](./integrate/index.html)
+  - 5. Classes
 
 ### Project
 
 > after class
 
-
+Impress yourselves! Using [this starter repository](https://github.com/HackYourFutureBelgium/encapsulation-starter-wk-3-class/), plan and scope a project of your choosing. This can be a totally new idea or a reworking of a previous project, maybe even a continuation of last week's project!
 
 #### Checklist
 
 ```md
+- [ ] [repo](https://github.com/_/_) (with a complete README)
+- [ ] [live demo](https://_.github.io/_)
+- Project Planning
+  - [ ] [Backlog](https://github.com/_/_/tree/master/project-planning/backlog.md)
+  - [ ] [Communication](https://github.com/_/_/tree/master/project-planning/backlog.md)
+  - [ ] [Development Strategy](https://github.com/_/_/tree/master/project-planning/development-strategy.md)
+  - [ ] [Project board](https://github.com/_/_/projects/_)
+- Implementation
+  - [ ] ES Modules (`import`/`export`)
+  - [ ] at least one `class`
+  - [ ] Logs of each user interaction
 ```
 
 [TOP](#encapsulation)
@@ -314,3 +338,6 @@ Screen recordings of class.  Coaches, when sending your PR's with links please .
 1. Week 1:
     - Part 1: [`this`](https://vimeo.com/453294595)
     - Part 2: [OOP Refactor](https://vimeo.com/453294872)
+2. Week 2:
+    - Part 1: [getting/setting & Prototypes](https://vimeo.com/455538183)
+    - Part 2: [`Object.create` pt. 1](https://vimeo.com/455538415), [pt. 2](https://vimeo.com/455538951)

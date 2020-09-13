@@ -32,8 +32,10 @@
       handleClick: function (view) {
         this.step();
         view.innerHTML = this.state.current;
+        console.log(this.state.current)
       },
       render: function () {
+        debugger;
         const container = document.createElement('p');
         container.innerHTML = this.state.min;
         container.addEventListener('click', this.handleClick.bind(this, container));
